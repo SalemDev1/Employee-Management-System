@@ -52,7 +52,7 @@ class Department {
         });
         return totalSalary;
     }
-    //RAN INTO ALOT OF ISSUES SO REDID ORDER OF TASK 3,4,2
+    //************************************RAN INTO ALOT OF ISSUES SO REDID ORDER OF TASK 3,4,2*********************
      // Task 4 - Handle Bonuses for Managers
      calculateTotalSalaryWithBonus() {
         let totalSalary = 0;
@@ -68,3 +68,29 @@ class Department {
         return totalSalary;
     }
 }
+
+//Task 5- Create and Manage Departments and Employees
+
+// Create departments
+const CyberSecurity = new Department("Cyber Security");
+const QualityAssurance = new Department("Quality Assurance");
+
+// Create employees and managers
+const RyanReynolds = new Employee("Ryan Reynolds", 85000, "Security Analyst", "Cyber Security");
+const DwayneJohnson = new Employee("Dwayne Johnson", 78000, "QA Tester", "Quality Assurance");
+const SethRogen = new Manager("Seth Rogen", 125000, "Cyber Security Manager", "Cyber Security", 20000);
+const JamesFranco = new Manager("James Franco", 130000, "QA Lead", "Quality Assurance", 25000);
+
+// Add employees and managers to departments
+CyberSecurity.addEmployee(RyanReynolds);
+CyberSecurity.addEmployee(SethRogen);
+QualityAssurance.addEmployee(DwayneJohnson);
+QualityAssurance.addEmployee(JamesFranco);
+
+// Calculate total salary for each department (without bonuses)
+console.log(`Total salary for Cyber Security: $${CyberSecurity.getDepartmentSalary()}`);
+console.log(`Total salary for Quality Assurance: $${QualityAssurance.getDepartmentSalary()}`);
+
+// Calculate total salary for each department (with bonuses)
+console.log(`Total salary with bonuses for Cyber Security: $${CyberSecurity.calculateTotalSalaryWithBonus()}`);
+console.log(`Total salary with bonuses for Quality Assurance: $${QualityAssurance.calculateTotalSalaryWithBonus()}`);
