@@ -3,27 +3,31 @@
 // Employee class definition
 class Employee {
     constructor(name, salary, position, department) {
+        // This constructor sets up the employee's name, salary, position, and department
         this.name = name;
         this.salary = salary;
         this.position = position;
         this.department = department;
     }
-getDetails() {
-        return `${this.name} works as a ${this.position} with a salary of $${this.salary} wow thats lot of cheese for this person`;
+
+    // Method to get employee details
+    getDetails() {
+        return `${this.name} works as a ${this.position} with a salary of $${this.salary}, wow that's a lot of cheese for this person!`;
     }
 }
 
 // Manager class (inherits from Employee)
 class Manager extends Employee {
     constructor(name, salary, position, department, bonus) {
-        super(name, salary, position, department);
-        this.bonus = bonus;
+     super(name, salary, position, department);
+        this.bonus = bonus; // Manager gets a bonus, lucky them!
     }
-getDetails() {
-        return `${this.name} works as a ${this.position} with a salary of $${this.salary} and a bonus of $${this.bonus}, wow thats lot of cheese for this person`;
+
+    // Override the getDetails method to include the manager's bonus
+    getDetails() {
+        return `${this.name} works as a ${this.position} with a salary of $${this.salary} and a bonus of $${this.bonus}, wow that's a lot of cheese for this person!`;
     }
 }
-
 //Task 2-Create a Department Class
 // Department class 
 class Department {
@@ -40,5 +44,20 @@ getDepartmentSalary() {
             totalSalary += worker.salary;
         });
         return totalSalary;
+    }
+}
+  
+// Task 3 - Create a Manager Class that Inherits from Employee
+
+// Manager class (inherits from Employee)
+class Manager extends Employee {
+    constructor(name, salary, position, department, bonus) {
+        super(name, salary, position, department);
+        this.bonus = bonus;  
+    }
+
+    // Override the getDetails method to include the manager's bonus
+    getDetails() {
+        return `${this.name} works as a ${this.position} with a salary of $${this.salary} and a bonus of $${this.bonus}, wow that's a lot of cheese for this person!`;
     }
 }
